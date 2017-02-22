@@ -1,0 +1,15 @@
+PODS:
+  - FDCategories (1.1.0)
+  - pop (1.0.9)
+
+DEPENDENCIES:
+  - FDCategories (~> 1.1.0)
+  - pop (~> 1.0.9)
+
+SPEC CHECKSUMS:
+  FDCategories: 81150670a783355721e7a120cf60348d96cfb143
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
+
+PODFILE CHECKSUM: 3027b106043be77b5d1877611e5de17b2f413179
+
+COCOAPODS: 1.2.0

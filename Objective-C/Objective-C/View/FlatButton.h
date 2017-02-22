@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  FlatButton.h
 //  Objective-C
 //
 //  Created by QianTuFD on 2017/2/21.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface FlatButton : UIButton
 
++ (instancetype)button;
 
 @end
-
