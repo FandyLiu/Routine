@@ -44,7 +44,7 @@
 - (void)setup {
     self.layer.cornerRadius = 4.f;
     self.backgroundColor = self.tintColor;
-    self.titleLabel.font = [UIFont systemFontOfSize:20];
+    self.titleLabel.font = [UIFont systemFontOfSize:20.f];
     [self setTitleColor:[UIColor whiteColor]
                forState:UIControlStateNormal];
     [self addTarget:self action:@selector(scaleToSmall)
