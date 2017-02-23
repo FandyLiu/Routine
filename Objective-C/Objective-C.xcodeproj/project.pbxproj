@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31B9F50A1E5DC186006DD878 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B9F5091E5DC186006DD878 /* MenuTableViewCell.m */; };
 		5D30422EB3BE6A980CC74F3E /* libPods-Objective-CTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B829EC6AF0DA5B7D5ED6F8E7 /* libPods-Objective-CTests.a */; };
 		89D81D888580F28B4AAFCBFA /* libPods-Objective-C.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33535A7B64DFAB37E21A8607 /* libPods-Objective-C.a */; };
 		D75FDD341E5D250100DBFBEC /* FontTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D75FDD331E5D250100DBFBEC /* FontTableViewController.m */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		31B9F5081E5DC186006DD878 /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewCell.h; sourceTree = "<group>"; };
+		31B9F5091E5DC186006DD878 /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewCell.m; sourceTree = "<group>"; };
 		33535A7B64DFAB37E21A8607 /* libPods-Objective-C.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Objective-C.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F68D7D0EB6BAFE01C6937E3 /* Pods-Objective-CTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Objective-CTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Objective-CTests/Pods-Objective-CTests.release.xcconfig"; sourceTree = "<group>"; };
 		6B958D3AD3A9046F22F20A40 /* Pods-Objective-CUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Objective-CUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Objective-CUITests/Pods-Objective-CUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -239,6 +242,8 @@
 		D76B13A11E5C473500A1247A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				31B9F5081E5DC186006DD878 /* MenuTableViewCell.h */,
+				31B9F5091E5DC186006DD878 /* MenuTableViewCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -549,6 +554,7 @@
 				D75FDD381E5D40AB00DBFBEC /* ScreenshotsViewController.m in Sources */,
 				D76B13251E5C11A700A1247A /* main.m in Sources */,
 				D75FDD341E5D250100DBFBEC /* FontTableViewController.m in Sources */,
+				31B9F50A1E5DC186006DD878 /* MenuTableViewCell.m in Sources */,
 				D76B13A81E5C480000A1247A /* FlatButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

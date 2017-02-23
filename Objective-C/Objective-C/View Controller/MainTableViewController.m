@@ -7,6 +7,7 @@
 //
 
 #import "MainTableViewController.h"
+#import "MenuTableViewCell.h"
 
 #import "CallViewController.h"
 #import "FontTableViewController.h"
@@ -66,7 +67,7 @@ static NSString * const kCellIdentifier = @"mainCellIdentifier";
 #pragma mark - Private instance methods
 
 - (void)configureTableView {
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellIdentifier];
+    [self.tableView registerClass:[MenuTableViewCell class] forCellReuseIdentifier:kCellIdentifier];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.rowHeight = 50.f;
 }
