@@ -696,6 +696,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 389K47LAL3;
 				INFOPLIST_FILE = "Objective-C/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

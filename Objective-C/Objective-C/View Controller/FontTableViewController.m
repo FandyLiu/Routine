@@ -84,7 +84,7 @@ static NSString * const kCellIdentifier = @"fontCellIdentifier";
 
 - (void)configureTableView {
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-    self.tableView.rowHeight = 80.f;
+    self.tableView.rowHeight = 65.f;
 }
 
 

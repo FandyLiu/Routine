@@ -42,6 +42,8 @@
 static CGFloat const btnHeight = 40.f;
 static CGFloat const margin = 10.f;
 
+
+
 - (void)addCallButtons {
     UIView *contentView = [[UIView alloc] init];
     [self.view addSubview:contentView];
@@ -96,21 +98,12 @@ static CGFloat const margin = 10.f;
     
 }
 
-/*
- options目前可传入参数Key在UIApplication头文件只有一个:UIApplicationOpenURLOptionUniversalLinksOnly,其对应的Value为布尔值,默认为False.如该Key对应的Value为True,那么打开所传入的Universal Link时,只允许通过这个Link所代表的iOS应用跳转的方式打开这个链接,否则就会返回success为false,也就是说只有安装了Link所对应的App的情况下才能打开这个Universal Link,而不是通过启动Safari方式打开这个Link的代表的网站.
- 
- [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]
- options:@{UIApplicationOpenURLOptionUniversalLinksOnly:@YES}
- completionHandler:^(BOOL success) {
- 
- }];
- 
- NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
- 
- */
+
+
 
 - (void)touch:(UIButton *)btn {
 //    UIApplicationOpenSettingsURLString；
+    
     switch (btn.tag) {
         case 0:
         {
