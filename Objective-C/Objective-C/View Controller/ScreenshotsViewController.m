@@ -7,6 +7,7 @@
 //
 
 #import "ScreenshotsViewController.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface ScreenshotsViewController ()
 
@@ -16,22 +17,58 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor yellowColor];
+    UIButton * btn = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    
+    btn.frame =CGRectMake(130, 130, 30, 30);
+    
+    [self.view addSubview:btn];
+    
+    [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)btnClick:(UIButton *)sender
+
+{
+    
+    [self savePhoto];
+    
 }
 
-/*
-#pragma mark - Navigation
+// 保存图片到相册功能，ALAssetsLibraryiOS9.0 以后用photoliabary 替代，
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)savePhoto
+
+{
+    
+    UIImage * image = [self captureImageFromView:self.view];
+    
+    ALAssetsLibrary * library = [ALAssetsLibrary new];
+    
+    NSData * data = UIImageJPEGRepresentation(image, 1.0);
+    
+    [library writeImageDataToSavedPhotosAlbum:data metadata:nil completionBlock:nil];
+    
 }
-*/
+
+//截图功能
+
+-(UIImage *)captureImageFromView:(UIView *)view
+
+{
+    CGRect frame = view.frame;
+    UIGraphicsBeginImageContext(frame.size);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    
+    [view.layer renderInContext:ctx];
+    
+    UIImage * image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return image;
+    
+}
+
 
 @end

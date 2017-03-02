@@ -2,6 +2,27 @@
 
 import UIKit
 
-//var str = "Hello, playgroun:\(123)"
 
-let a: String = "aaa"
+func printCharacters(in set: CharacterSet) {
+    var characters = ""
+    let iSet = set.inverted
+    for i: UInt32 in 32..<127 {
+        let c = UnicodeScalar(i)!
+        if iSet.contains(c) {
+            characters += String(c)
+        }
+    }
+    print("'\(characters)'")
+}
+
+
+let b = CharacterSet.urlPathAllowed
+
+printCharacters(in: b)
+
+
+
+
+
+
+
