@@ -1,14 +1,14 @@
 //
-//  SwiftUITests.swift
-//  SwiftUITests
+//  SwifterUITests.swift
+//  SwifterUITests
 //
-//  Created by QianTuFD on 2017/2/21.
+//  Created by QianTuFD on 2017/3/2.
 //  Copyright © 2017年 fandy. All rights reserved.
 //
 
 import XCTest
 
-class SwiftUITests: XCTestCase {
+class SwifterUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

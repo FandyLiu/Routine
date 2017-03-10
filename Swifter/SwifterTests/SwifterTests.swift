@@ -1,15 +1,15 @@
 //
-//  SwiftTests.swift
-//  SwiftTests
+//  SwifterTests.swift
+//  SwifterTests
 //
-//  Created by QianTuFD on 2017/2/21.
+//  Created by QianTuFD on 2017/3/2.
 //  Copyright © 2017年 fandy. All rights reserved.
 //
 
 import XCTest
-@testable import Swift
+@testable import Swifter
 
-class SwiftTests: XCTestCase {
+class SwifterTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

@@ -9,6 +9,7 @@
 #import "ScreenshotsViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 
+
 @interface ScreenshotsViewController ()
 
 @end
@@ -18,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor yellowColor];
-    UIButton * btn = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    UIButton * btn = [UIButton buttonWithType: UIButtonTypeContactAdd];
     
     btn.frame =CGRectMake(130, 130, 30, 30);
     
@@ -30,7 +31,7 @@
 -(void)btnClick:(UIButton *)sender
 
 {
-    
+
     [self savePhoto];
     
 }
