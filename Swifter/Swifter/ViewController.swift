@@ -1,13 +1,5 @@
 //
 //  ViewController.swift
-//  Swifter
-//
-//  Created by QianTuFD on 2017/3/2.
-//  Copyright © 2017年 fandy. All rights reserved.
-//
-
-//
-//  ViewController.swift
 //  Swift
 //
 //  Created by QianTuFD on 2017/2/21.
@@ -74,7 +66,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        HttpServer.login(phoneNumber: "", password: "", isLogin: true, loginChannel: .phoneNumber, completionHandler: { success, error in
+            guard let success = success else {
+                print(error ?? "error")
+                return
+            }
+            print(success)
+        })
+    }
 }
+
 
 
 

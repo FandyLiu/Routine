@@ -154,4 +154,17 @@ static CGFloat const margin = 10.f;
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self setNeedsStatusBarAppearanceUpdate];
+    
+}
+
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
+
+
 @end

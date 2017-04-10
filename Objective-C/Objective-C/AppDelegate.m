@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "MainTableViewController.h"
 #import <FDCategories/FDCategories.h>
+#import "BaseNavigationController.h"
 
 
 @interface AppDelegate ()
@@ -21,7 +22,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     MainTableViewController *mVC = [[MainTableViewController alloc] init];
-    UINavigationController *mNav = [[UINavigationController alloc] initWithRootViewController:mVC];
+    BaseNavigationController *mNav = [[BaseNavigationController alloc] initWithRootViewController:mVC];
     self.window.rootViewController = mNav;
     [self.window makeKeyAndVisible];
     
