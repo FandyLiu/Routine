@@ -26,6 +26,7 @@
 		D76B139D1E5C468400A1247A /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D76B139B1E5C468400A1247A /* MainTableViewController.m */; };
 		D76B13A81E5C480000A1247A /* FlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D76B13A71E5C480000A1247A /* FlatButton.m */; };
 		DB42E6FA1E77D75200E9214A /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB42E6F91E77D75200E9214A /* BaseNavigationController.m */; };
+		DB637E0C1E9C69A300F8F26A /* AuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB637E0B1E9C69A300F8F26A /* AuthorizationManager.swift */; };
 		FEB8C801818CEA77B841AB04 /* libPods-Objective-CUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DBF339B6C526A89FA9D08A /* libPods-Objective-CUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,8 @@
 		D76B13A71E5C480000A1247A /* FlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlatButton.m; sourceTree = "<group>"; };
 		DB42E6F81E77D75200E9214A /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		DB42E6F91E77D75200E9214A /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		DB637E0A1E9C69A200F8F26A /* Objective-C-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Objective-C-Bridging-Header.h"; sourceTree = "<group>"; };
+		DB637E0B1E9C69A300F8F26A /* AuthorizationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationManager.swift; sourceTree = "<group>"; };
 		F378E441543B9D1B87F24B9F /* Pods-Objective-CTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Objective-CTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Objective-CTests/Pods-Objective-CTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FD2EB100661E6C2106D06FEC /* Pods-Objective-CUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Objective-CUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Objective-CUITests/Pods-Objective-CUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,12 +179,14 @@
 		D76B13171E5C11A700A1247A = {
 			isa = PBXGroup;
 			children = (
+				DB637E0B1E9C69A300F8F26A /* AuthorizationManager.swift */,
 				D76B13221E5C11A700A1247A /* Objective-C */,
 				D76B133C1E5C11A700A1247A /* Objective-CTests */,
 				D76B13471E5C11A700A1247A /* Objective-CUITests */,
 				D76B13211E5C11A700A1247A /* Products */,
 				4AB912029AFF1A5706D7EA50 /* Pods */,
 				8891F6EFEBFCA54F640A9AC1 /* Frameworks */,
+				DB637E0A1E9C69A200F8F26A /* Objective-C-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -376,6 +381,7 @@
 					D76B131F1E5C11A700A1247A = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 389K47LAL3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					D76B13381E5C11A700A1247A = {
@@ -590,6 +596,7 @@
 				DB42E6FA1E77D75200E9214A /* BaseNavigationController.m in Sources */,
 				D74FD1971E691D8E00F02085 /* AppUntils.m in Sources */,
 				D74FD1941E691C9400F02085 /* KeychainItemWrapper.m in Sources */,
+				DB637E0C1E9C69A300F8F26A /* AuthorizationManager.swift in Sources */,
 				D76B13251E5C11A700A1247A /* main.m in Sources */,
 				D75FDD341E5D250100DBFBEC /* FontTableViewController.m in Sources */,
 				31B9F50A1E5DC186006DD878 /* MenuTableViewCell.m in Sources */,
@@ -733,14 +740,19 @@
 			baseConfigurationReference = CC22ACE9A35B38BA6EC5A06A /* Pods-Objective-C.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 389K47LAL3;
 				INFOPLIST_FILE = "Objective-C/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fandy.Objective-C";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Objective-C-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -749,13 +761,17 @@
 			baseConfigurationReference = 994CA521C93A56DEB6BA3EAB /* Pods-Objective-C.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 389K47LAL3;
 				INFOPLIST_FILE = "Objective-C/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fandy.Objective-C";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Objective-C-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -763,6 +779,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F378E441543B9D1B87F24B9F /* Pods-Objective-CTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 389K47LAL3;
 				INFOPLIST_FILE = "Objective-CTests/Info.plist";
@@ -777,6 +794,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3F68D7D0EB6BAFE01C6937E3 /* Pods-Objective-CTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 389K47LAL3;
 				INFOPLIST_FILE = "Objective-CTests/Info.plist";
@@ -791,6 +809,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FD2EB100661E6C2106D06FEC /* Pods-Objective-CUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 389K47LAL3;
 				INFOPLIST_FILE = "Objective-CUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -804,6 +823,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6B958D3AD3A9046F22F20A40 /* Pods-Objective-CUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 389K47LAL3;
 				INFOPLIST_FILE = "Objective-CUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
