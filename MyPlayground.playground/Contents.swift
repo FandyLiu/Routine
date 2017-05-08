@@ -2,18 +2,8 @@
 
 import UIKit
 
-struct Person {
-    var name: String
-}
+let arr = [Int]()
 
-extension Person: Equatable {
-    static func ==(lhs: Person, rhs: Person) -> Bool {
-        return lhs.name == rhs.name
-    }
-}
+arr.removeLast()
 
 
-Person(name: "Lisa") == Person(name: "Lisa") // → true
-Person(name: "Lisa") == Person(name: "Bart") // → false
-
-print("aaa")
