@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import CryptoSwift
+              
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
