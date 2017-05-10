@@ -20,6 +20,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     MainTableViewController *mVC = [[MainTableViewController alloc] init];
     BaseNavigationController *mNav = [[BaseNavigationController alloc] initWithRootViewController:mVC];
@@ -32,11 +33,6 @@
     
     NSString *aaaa = [self uuid];
     NSString *bbbb = [self uuid];
-    
-    
-    
-
-    
     
     
     
