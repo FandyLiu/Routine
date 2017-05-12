@@ -26,17 +26,6 @@
     BaseNavigationController *mNav = [[BaseNavigationController alloc] initWithRootViewController:mVC];
     self.window.rootViewController = mNav;
     [self.window makeKeyAndVisible];
-    
-    
-    
-    
-    
-    NSString *aaaa = [self uuid];
-    NSString *bbbb = [self uuid];
-    
-    
-    
-    
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"Zapfino" size:20],
                                                            NSForegroundColorAttributeName: [UIColor blueColor]}];
     

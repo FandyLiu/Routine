@@ -1,59 +1,47 @@
 import UIKit
 
 /*
+ 在 Swift 中有一类很有意思的写法，可以让我们不直接使用实例来调用这个实例上的方法，而是通过类型取出这个类型的某个实例方法的签名，然后再通过传递实例来拿到实际需要调用的方法。
+ // Swift 中可以直接用 Type.instanceMethod 的语法来生成一个可以柯里化的方法。
+
  /*
- @selector 是 OC 的关键字, 他可以将方法转换为 SEL 类型
+ 其实对于 Type.instanceMethod 这样的取值语句，实际上刚才
+ let f = MyClass.method
+ 做的事情是类似于下面这样的字面量转换：
+ let f = { (obj: MyClass) in obj.method }
  */
- 
- // SEL 两种创建方法
- SEL ocMethod0 = @selector(callMe);
- SEL ocMethod1 = NSSelectorFromString(@"callMeWithParam:");
- // 可以通过 performSelector 来调用
  
  */
 
-class SelectorTest: NSObject {
-    var oneParam: Int = 0
-    // private 只能在本类中调用 扩展也不行
-    @objc fileprivate func privateMethod() {
-        
+class MyClass {
+    func method0(number: Int) -> Int {
+        return number
     }
     
-    func callMe() {
-        
+    func method1(number: Int) -> Int {
+        return number + 1
     }
     
-    func callMe(with param: Any) {
-        
+    class func method1(number: Int) -> Int {
+        return number
+    }
+    class func method1() -> Int {
+        return 66
     }
 }
 
-let test = SelectorTest()
-/*
- “selector 其实是 Objective-C runtime 的概念，如果你的 selector 对应的方法只在 Swift 中可见的话 (也就是说它是一个 Swift 中的 private 方法)，在调用这个 selector 时你会遇到一个 unrecognized selector 错误：”
- // 'privateMethod' is inaccessible due to 'private' protection level
- */
+let instance = MyClass()
 
-let pM = test.responds(to: #selector(SelectorTest.privateMethod))
-//Timer.scheduledTimer(timeInterval: 1, target: test, selector: #selector(SelectorTest.privateMethod), userInfo: nil, repeats: false)
+let f0 = MyClass.method0
 
 /*
- 检测是否有某个参数
- */
-if test.responds(to: #selector(getter: SelectorTest.oneParam)) {
-    print("test 中有 oneParam")
-}
 
-
-/*
- “但是，如果在同一个作用域中存在同样名字的两个方法，即使它们的函数签名不相同，Swift 编译器也不允许编译通过：”
- */
-//let swiftMethod0 = #selector(callMe) // ambiguous use of 'callMe'
-let swiftMethod0 = #selector((SelectorTest.callMe) as (SelectorTest) -> () -> ())
-let swiftMethod1 = #selector(SelectorTest.callMe(with:))
-/*
- https://github.com/apple/swift-evolution/blob/master/proposals/0022-objc-selectors.md
- let sel = #selector(((UIView.insertSubview(_:at:)) as (UIView) -> (UIView, Int) -> Void))
+ 这种方法只适用于实例方法，对于属性的 getter 或者 setter 是不能用类似的写法的。另外，如果我们遇到有类型方法的名字冲突时 如果不加改动，MyClass.method 将取到的是类型方法，如果我们想要取实例方法的话，可以显式地加上类型声明加以区别。这种方式不仅在这里有效，在其他大多数名字有歧义的情况下，都能很好地解决问题：
  */
 
-print("aa")
+let f1: () -> (Int) = MyClass.method1
+
+let f2:(MyClass) -> (Int) -> (Int) = MyClass.method1
+
+
+
