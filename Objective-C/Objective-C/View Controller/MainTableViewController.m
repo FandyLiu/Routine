@@ -41,9 +41,6 @@ static NSString * const kCellIdentifier = @"mainCellIdentifier";
     self.title = @"Routine";
     [self configureTableView];
     [self configureTitleView];
-    
-    
-    
 }
 
 #pragma mark - Table view delegate
